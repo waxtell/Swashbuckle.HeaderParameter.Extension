@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Will Axtell</Authors>
+    <Company>Will Axtell</Company>
+    <Description>Annotate your controller and/or methods to identify header parameters</Description>
+    <PackageProjectUrl>https://github.com/waxtell/Swashbuckle.HeaderParameter.Extension</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/waxtell/Swashbuckle.HeaderParameter.Extension.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Swashbuckle header parameter</PackageTags>
+    <PackageReleaseNotes>1.0.0- Initial release</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0" />
+  </ItemGroup>
+
+</Project>
