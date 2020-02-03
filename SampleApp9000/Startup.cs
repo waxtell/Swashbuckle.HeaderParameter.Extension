@@ -35,7 +35,19 @@ namespace SampleApp9000
                     }
                 );
 
-                c.AddHeaderParameters();
+                c.AddHeaderParameters
+                (
+                    new[]
+                    {
+                        new HeaderParameter
+                        {
+                            Name = "X-Correlation-ID",
+                            AllowEmptyValue = false,
+                            Required = true,
+                            Description = "Correlates HTTP requests between a client and server."
+                        }
+                    }
+                );
             });
         }
 

@@ -11,6 +11,25 @@ Adding support in your startup file:
             });
 ```
 
+Or, to add a header parameter(s) to all methods within an Api:
+```csharp
+            services.AddSwaggerGen(c =>
+            {
+                c.AddHeaderParameters
+                (
+                    new[]
+                    {
+                        new HeaderParameter
+                        {
+                            Name = "X-Correlation-ID",
+                            AllowEmptyValue = false,
+                            Required = true,
+                            Description = "Correlates HTTP requests between a client and server."
+                        }
+                    }
+                );
+```
+
 Adding a required header parameter to a method:
 ```csharp
         [HttpPost]
