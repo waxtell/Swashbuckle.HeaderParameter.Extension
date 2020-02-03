@@ -9,9 +9,10 @@
     <RepositoryUrl>https://github.com/waxtell/Swashbuckle.HeaderParameter.Extension.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>Swashbuckle header parameter</PackageTags>
-    <PackageReleaseNotes>1.0.1- Initial release</PackageReleaseNotes>
+    <PackageReleaseNotes>1.0.2- Add support for adding header parameters to all methods within an Api
+1.0.1- Initial release</PackageReleaseNotes>
     <PackageId>Swashbuckle.HeaderParameter.Extension</PackageId>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>

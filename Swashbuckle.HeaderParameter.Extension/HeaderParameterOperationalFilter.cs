@@ -9,6 +9,13 @@ namespace Swashbuckle.HeaderParameter.Extension
 {
     public class HeaderParameterOperationalFilter : IOperationFilter
     {
+        private readonly ApiConfig _apiConfig;
+
+        public HeaderParameterOperationalFilter(ApiConfig apiConfig)
+        {
+            _apiConfig = apiConfig;
+        }
+
         public void Apply(OpenApiOperation operation, OperationFilterContext context)
         {
             if (operation.Parameters == null)
@@ -20,7 +27,10 @@ namespace Swashbuckle.HeaderParameter.Extension
                                         .GetControllerAndActionAttributes<HeaderParameterAttribute>()
                                         .ToList();
 
-            foreach(var attr in parameterAttributes.Merge(x => x.Name))
+            var aggregatedHeaders = new List<IHeaderParameter>(_apiConfig.HeaderParameters);
+            aggregatedHeaders.AddRange(parameterAttributes);
+
+            foreach(var attr in aggregatedHeaders.Merge(x => x.Name))
             {
                 operation
                     .Parameters
