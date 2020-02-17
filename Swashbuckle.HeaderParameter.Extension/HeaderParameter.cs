@@ -11,5 +11,6 @@
         public string Example { get; set; }
         public bool Explode { get; set; } = false;
         public string Type { get; set; }
+        public string Format { get; set; }
     }
 }

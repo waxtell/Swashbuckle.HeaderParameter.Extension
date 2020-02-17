@@ -45,7 +45,8 @@ namespace SampleApp9000
                             AllowEmptyValue = false,
                             Required = true,
                             Description = "Correlates HTTP requests between a client and server.",
-                            Type = "string"
+                            Type = "string",
+                            Format = "uuid"
                         }
                     }
                 );

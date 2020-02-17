@@ -47,7 +47,9 @@ namespace Swashbuckle.HeaderParameter.Extension
                             Example = new OpenApiString(attr.Example ?? string.Empty),
                             AllowReserved = attr.AllowReserved,
                             Explode = attr.Explode,
-                            Schema = new OpenApiSchema() { Type = attr.Type}
+                            Schema = string.IsNullOrWhiteSpace(attr.Type)
+                                        ? null 
+                                        : new OpenApiSchema { Type = attr.Type, Format = attr.Format }
                         }
                     );
             }

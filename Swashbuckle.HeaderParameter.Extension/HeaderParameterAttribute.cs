@@ -57,5 +57,11 @@
             get => _headerParameterImplementation.Type;
             set => _headerParameterImplementation.Type = value;
         }
+
+        public string Format
+        {
+            get => _headerParameterImplementation.Format;
+            set => _headerParameterImplementation.Format = value;
+        }
     }
 }
