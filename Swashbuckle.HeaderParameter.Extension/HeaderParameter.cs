@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Swashbuckle.HeaderParameter.Extension
+﻿namespace Swashbuckle.HeaderParameter.Extension
 {
     public class HeaderParameter : IHeaderParameter
     {
@@ -14,5 +10,6 @@ namespace Swashbuckle.HeaderParameter.Extension
         public string Description { get; set; }
         public string Example { get; set; }
         public bool Explode { get; set; } = false;
+        public string Type { get; set; }
     }
 }

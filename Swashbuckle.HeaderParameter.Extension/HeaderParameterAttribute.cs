@@ -51,5 +51,11 @@
             get => _headerParameterImplementation.Explode;
             set => _headerParameterImplementation.Explode = value;
         }
+
+        public string Type
+        {
+            get => _headerParameterImplementation.Type;
+            set => _headerParameterImplementation.Type = value;
+        }
     }
 }

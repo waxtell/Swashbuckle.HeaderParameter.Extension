@@ -61,5 +61,7 @@
         /// For all other styles, the default value is false.
         /// </summary>
         bool Explode { get; set; }
+
+        string Type { get; set; }
     }
 }
