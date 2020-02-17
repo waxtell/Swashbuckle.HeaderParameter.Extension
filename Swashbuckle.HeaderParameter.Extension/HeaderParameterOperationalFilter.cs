@@ -36,7 +36,7 @@ namespace Swashbuckle.HeaderParameter.Extension
                     .Parameters
                     .Add
                     (
-                        new OpenApiParameter()
+                        new OpenApiParameter
                         {
                             AllowEmptyValue = attr.AllowEmptyValue,
                             Deprecated = attr.Deprecated,
@@ -46,7 +46,10 @@ namespace Swashbuckle.HeaderParameter.Extension
                             Required = attr.Required, 
                             Example = new OpenApiString(attr.Example ?? string.Empty),
                             AllowReserved = attr.AllowReserved,
-                            Explode = attr.Explode
+                            Explode = attr.Explode,
+                            Schema = string.IsNullOrWhiteSpace(attr.Type)
+                                        ? null 
+                                        : new OpenApiSchema { Type = attr.Type, Format = attr.Format }
                         }
                     );
             }

@@ -9,7 +9,7 @@ namespace SampleApp9000.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    [HeaderParameter(Name = "Content-Disposition", Required = true, Example = "inline")]
+    [HeaderParameter(Name = "Content-Disposition", Required = true, Example = "inline", Type = "string")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -18,7 +18,7 @@ namespace SampleApp9000.Controllers
         };
 
         [HttpGet]
-        [HeaderParameter(Name = "From", Required = false, Example = "user@sampleapp9000.com")]
+        [HeaderParameter(Name = "From", Required = false, Example = "user@sampleapp9000.com", Type = "string", Format = "email")]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
@@ -32,7 +32,7 @@ namespace SampleApp9000.Controllers
         }
 
         [HttpPost]
-        [HeaderParameter(Name = "Content-Type", Required = true, Example = "application/json")]
+        [HeaderParameter(Name = "Content-Type", Required = true, Example = "application/json", Type = "string")]
         public async Task<IActionResult> Post([FromBody] WeatherForecast _)
         {
             return 

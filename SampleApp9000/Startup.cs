@@ -44,7 +44,9 @@ namespace SampleApp9000
                             Name = "X-Correlation-ID",
                             AllowEmptyValue = false,
                             Required = true,
-                            Description = "Correlates HTTP requests between a client and server."
+                            Description = "Correlates HTTP requests between a client and server.",
+                            Type = "string",
+                            Format = "uuid"
                         }
                     }
                 );

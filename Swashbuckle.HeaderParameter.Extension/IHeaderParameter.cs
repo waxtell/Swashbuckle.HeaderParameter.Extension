@@ -61,5 +61,18 @@
         /// For all other styles, the default value is false.
         /// </summary>
         bool Explode { get; set; }
+
+        /// <summary>
+        /// Follow JSON Schema definition: https://tools.ietf.org/html/draft-fge-json-schema-validation-00
+        /// Value MUST be a string. Multiple types via an array are not supported.
+        /// </summary>
+        string Type { get; set; }
+
+        /// <summary>
+        /// Follow JSON Schema definition: https://tools.ietf.org/html/draft-fge-json-schema-validation-00
+        /// While relying on JSON Schema's defined formats,
+        /// the OAS offers a few additional predefined formats.
+        /// </summary>
+        string Format { get; set; }
     }
 }

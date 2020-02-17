@@ -24,7 +24,9 @@ Or, to add a header parameter(s) to all methods within an Api:
                             Name = "X-Correlation-ID",
                             AllowEmptyValue = false,
                             Required = true,
-                            Description = "Correlates HTTP requests between a client and server."
+                            Description = "Correlates HTTP requests between a client and server.",
+                            Type = "string",
+                            Format = "uuid"
                         }
                     }
                 );
@@ -33,7 +35,7 @@ Or, to add a header parameter(s) to all methods within an Api:
 Adding a required header parameter to a method:
 ```csharp
         [HttpPost]
-        [HeaderParameter(Name = "Content-Type", Required = true, Example = "application/json")]
+        [HeaderParameter(Name = "Content-Type", Required = true, Example = "application/json", Type = "string")]
         public async Task<IActionResult> Post([FromBody] WeatherForecast _)
         {
 ```
@@ -42,7 +44,7 @@ Adding a header paramter to all methods within a controller:
 ```csharp
     [ApiController]
     [Route("[controller]")]
-    [HeaderParameter(Name = "Content-Disposition", Required = true, Example = "inline")]
+    [HeaderParameter(Name = "Content-Disposition", Required = true, Example = "inline", Type = "string")]
     public class WeatherForecastController : ControllerBase
     {
 ```
